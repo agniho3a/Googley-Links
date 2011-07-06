@@ -1,10 +1,19 @@
-Googley-Links is a Google Chrome extension that 
-appears on the toolbar 'browser-action' and allows
-user to maintain a list of frequently used URLs.
+Googley-Links is a Google Chrome 'browser-action' extension that appears on the toolbar and allows
+user to maintain a list of frequently used URLs in a Google Spreadsheet.
 
 It can be used for 'Read it Later' kind of purposes too.
 
-There are a few things that you should do before installing
-this extension:
+There are a few things that you should do before using this extension:
 
---TODO--
+1. Install the extension
+2. Create a Google Spreadsheet
+3. Create 2 Columns in the spreadsheet Titled "Title" and "URL" (suggested names - you can have any names to the columns)
+4. Click on "Share" drop-down (the little arrow on the side of the button) and click on "Publish as WebPage" 
+5. Leave all the fields to the defaults on the "Publish as WebPage dialog and copy the URL for the published page (last text area on the page)
+6. Click on "Publish Now" or "Republish Now" button on the modal.
+7. Click on the Extension icon on the toolbar and click on the 'options' link.
+8. Paste the Link to published HTML page in the SpreadSheet Link text field
+9. Done !!
+
+You can now add the 'Title' and 'URLs' in the spreadsheet and they will appear in the menu as a dropdown.
+ 
