@@ -1,0 +1,20 @@
+{
+  "name": "Frequently Used URLs",
+  "version": "1.0",
+  "description": "List of URLs from my Google Spreadsheet",
+  "icons": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
