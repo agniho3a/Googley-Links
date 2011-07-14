@@ -12,6 +12,7 @@
     "default_icon": "res/icon.png",
     "popup": "popup.html"
   },
+  "options_page": "options.html",
   "permissions": [
     "tabs",
     "http://*/*",

@@ -1,9 +1,12 @@
 function paint_options(){
-	//link.href="javascript:chrome.tabs.create({url: '" + optURL + "'});";
-	var sheetFeedUrl = "https://spreadsheets.google.com/feeds/list/0AlCytEQA783GdHE5M0VYbV93TkpDY0tLTHlyZkRhZGc/od6/public/basic?hl=en_US";
+	var googleSheet = new GoogleSpreadsheet();
+
+	var sheetUrl		= googleSheet.getSheetUrl();
+	var sheetFeedUrl	= googleSheet.getFeedUrl();
+
 	var xml = new JKL.ParseXML( sheetFeedUrl );
     var data = xml.parse();
-	var sheetUrl = "https://spreadsheets0.google.com/spreadsheet/ccc?hl=en_US&key=tq93EXm_wNJCcKKLyrfDadg&hl=en_US#gid=0";
+
 	document.getElementById("sheetLink").href = "javascript:chrome.tabs.create({url: '" + sheetUrl + "'});";
 
 	for (i=0; i<data.feed.entry.length ;i++ )
@@ -23,11 +26,15 @@ function add_row(optTitle, optLink){
 
 	tr.appendChild(td);
 			
-
-	var link = document.createElement("a");
-	link.href="javascript:chrome.tabs.create({url: '" + optLink + "'});";
-	link.innerText = optTitle;
-	td.appendChild(link);
+	if(optTitle != '---'){
+		var link = document.createElement("a");
+		link.href="javascript:chrome.tabs.create({url: '" + optLink + "'});";
+		link.innerText = optTitle;
+		td.appendChild(link);
+	} else {
+		var hr = document.createElement("hr");
+		td.appendChild(hr);
+	}
 	document.getElementById("optionsTable").appendChild(tr);		
 	
 }
