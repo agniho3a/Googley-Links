@@ -1,0 +1,27 @@
+body, table, tr, th, td {font-family: verdana; font-size:12px; margin-bottom:5px;}
+
+table {
+	margin-top:15px;
+	margin-right:20px;
+	width: 300px;
+	border: 0px solid #C0C0C0;
+	border-collapse: collapse;
+}
+
+table.options{
+	width: 600px;
+	height:20px;
+}
+
+tr { border: 0px solid #C0C0C0; }
+
+td { border: 0px solid #C0C0C0; }
+
+td.head { background-color: #efefef; }
+
+th { border: 0px solid #C0C0C0; }
+
+a:link {color: #330099; text-decoration:none;}
+a:visited {color: #330099; text-decoration:none;}
+a:hover {color: #330099; text-decoration: none; margin-left:2px; font-weight:bold;}
+a:active {color: #330099;}
