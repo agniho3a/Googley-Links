@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<link rel="stylesheet" type="text/css" href="global.css" />
+<script src="js/jkl-parsexml.js"></script>
+<script src="GoogleSpreadsheet.js"></script>
+<script src="js/options.js"></script>
+<script>
+	var optMgr = new OptionsManager();
+	optMgr.setSheetUrlTextBoxID("idSheetURL");
+	optMgr.setFeedUrlTextBoxID("idSheetFeed");
+
+	function saveTheOptions(){
+		optMgr.saveOptions();	
+	}
+
+	function restoreTheOptions(){
+		optMgr.restoreOptions();
+	}
+</script>
+</HEAD>
+
+<BODY style="width:600px; height:80px; background-image: url('res/logo.png'); background-repeat: no-repeat; background-position: right top; background-attachment: fixed;" onload="restoreTheOptions()">
+Please specify the Google Spreadsheet URL and the Spreadsheet Published Feed URL :
+<table class="options">
+	<tr>
+		<td style="width:200px;" class="head">Google Spreadsheet Link</td>
+		<td><input type="text" name="txtSheetURL" id="idSheetURL" style="width:420px;"/></td></tr>
+	<tr>
+		<td style="width:200px;" class="head">Google Spreadsheet Feed </td>
+		<td><input type="text" name="txtSheetFeed" id="idSheetFeed"  style="width:420px;"/></td>
+	</tr>
+</table>
+<input type="button" onClick="saveTheOptions()" value="Save"/>&nbsp;&nbsp;<a href="popup.html">Back</a>
+</BODY>
