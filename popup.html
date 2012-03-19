@@ -5,10 +5,11 @@
 <script src="js/jkl-parsexml.js"></script>
 <script src="js/GoogleSpreadsheet.js"></script>
 <script src="js/popup.js"></script>
+<script src="js/background.js"></script>
 </HEAD>
 
 <BODY style="width:280px; background-image: url('res/logo.png'); background-repeat: no-repeat; background-position: right top; background-attachment: fixed;" onload="paint_options()">
-<span style="font-weight:bold; font-size:15px;">Googley Links</span><a href="options.html">&nbsp;&nbsp;&nbsp;<img src="res/configuration-icon.png"></img></a>
+<span style="font-weight:bold; font-size:15px;">Googley Links</span>&nbsp;&nbsp;&nbsp;<a href="options.html"><img src="res/configuration-icon.png"></img></a>&nbsp;<a href="javascript:fetchAndReload();"><img src="res/reload.png"></a>
 
 <TABLE cellpadding="5" cellspacing="0" border="0" style="width:270px;" id="optionsTable">
 

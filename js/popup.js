@@ -1,18 +1,16 @@
+var notification;
+
 function paint_options(){
-	var googleSheet = new GoogleSpreadsheet();
 
-	var sheetUrl		= googleSheet.getSheetUrl();
-	var sheetFeedUrl	= googleSheet.getFeedUrl();
+	feedCount = localStorage["feedCount"];
 
-	var xml = new JKL.ParseXML( sheetFeedUrl );
-    var data = xml.parse();
-
+	var sheetUrl		= localStorage["sheetURL"];
 	document.getElementById("sheetLink").href = "javascript:chrome.tabs.create({url: '" + sheetUrl + "'});";
 
-	for (i=0; i<data.feed.entry.length ;i++ )
+	for (i=0; i<feedCount ;i++ )
 	{
-		var optTitle = data.feed.entry[i].title["#text"];
-		var optLink  = data.feed.entry[i].content["#text"];
+		var optTitle = localStorage["optTitle"+i];
+		var optLink  = localStorage["optLink"+i];
 		
 		add_row(optTitle,optLink.substring(5));
 	}
@@ -37,4 +35,29 @@ function add_row(optTitle, optLink){
 	}
 	document.getElementById("optionsTable").appendChild(tr);		
 	
+}
+
+function clearTable(){
+	document.getElementById("optionsTable").innerHTML = "";
+}
+
+function notifyMe(){
+	notification = webkitNotifications.createNotification(
+	   'res/icon.png',  // icon url - can be relative
+	  'Done!',  // notification title
+	  'Googley-Links successfully updated!'  // notification body text
+	   );
+	
+	notification.ondisplay= function() { 
+      setTimeout('notification.cancel()', 3000); 
+    }; 
+
+	notification.show();
+}
+
+function fetchAndReload(){
+	fetch_options();
+	clearTable();
+	paint_options();
+	notifyMe();
 }

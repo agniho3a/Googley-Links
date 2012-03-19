@@ -1,4 +1,4 @@
-{
+ {
   "name": "Googley Links",
   "version": "1.0",
   "description": "List of URLs from my Google Spreadsheet",
@@ -13,9 +13,11 @@
     "popup": "popup.html"
   },
   "options_page": "options.html",
+  "background_page":"background.html",
   "permissions": [
     "tabs",
     "http://*/*",
-    "https://*/*"
+    "https://*/*",
+    "notifications"
   ]
 }
